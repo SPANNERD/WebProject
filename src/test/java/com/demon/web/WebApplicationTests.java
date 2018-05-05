@@ -1,4 +1,4 @@
-package com.dstudio.web;
+package com.demon.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

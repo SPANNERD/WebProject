@@ -1,4 +1,4 @@
-package com.dstudio.web;
+package com.demon.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
