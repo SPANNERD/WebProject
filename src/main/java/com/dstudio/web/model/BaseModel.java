@@ -1,10 +1,11 @@
-package com.dstudio.model;
+package com.dstudio.web.model;
 
 import lombok.Data;
 import tgtools.util.GUID;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.OrderBy;
 
 /**
  * @author wd824
@@ -16,6 +17,7 @@ public class BaseModel extends MiniRowEntity {
     @Column(name = "ID_")
     private String id;
 
+    @OrderBy
     @Column(name = "REV_")
     private String rev;
 

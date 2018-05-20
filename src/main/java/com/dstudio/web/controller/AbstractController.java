@@ -1,7 +1,7 @@
-package com.dstudio.controller;
+package com.dstudio.web.controller;
 
-import com.dstudio.model.*;
-import com.dstudio.service.AbstractService;
+import com.dstudio.web.model.*;
+import com.dstudio.web.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

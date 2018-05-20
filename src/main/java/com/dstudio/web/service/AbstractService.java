@@ -1,8 +1,8 @@
-package com.dstudio.service;
+package com.dstudio.web.service;
 
-import com.dstudio.model.BaseModel;
-import com.dstudio.model.PageEntity;
-import com.dstudio.model.PageResult;
+import com.dstudio.web.model.BaseModel;
+import com.dstudio.web.model.PageEntity;
+import com.dstudio.web.model.PageResult;
 
 import java.util.List;
 
@@ -14,6 +14,8 @@ public interface AbstractService<T extends BaseModel> {
     List<T> listAll();
 
     PageResult<T> listByPage(T entity, PageEntity pageEntity);
+
+    List<T> list(T entity);
 
     int count(T entity);
 

@@ -1,4 +1,4 @@
-package com.dstudio.model;
+package com.dstudio.web.model;
 
 /**
  * Created by wd824 on 2017-06-26.

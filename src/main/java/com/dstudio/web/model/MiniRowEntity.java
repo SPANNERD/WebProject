@@ -1,4 +1,4 @@
-package com.dstudio.model;
+package com.dstudio.web.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

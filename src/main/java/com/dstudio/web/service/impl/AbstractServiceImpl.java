@@ -1,10 +1,10 @@
-package com.dstudio.service.impl;
+package com.dstudio.web.service.impl;
 
-import com.dstudio.model.BaseModel;
-import com.dstudio.model.MiniRowEntity;
-import com.dstudio.model.PageEntity;
-import com.dstudio.model.PageResult;
-import com.dstudio.service.AbstractService;
+import com.dstudio.web.model.BaseModel;
+import com.dstudio.web.model.MiniRowEntity;
+import com.dstudio.web.model.PageEntity;
+import com.dstudio.web.model.PageResult;
+import com.dstudio.web.service.AbstractService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +32,11 @@ public abstract class AbstractServiceImpl<T extends BaseModel, M extends Mapper<
     @Override
     public List<T> listAll() {
         return mapper.selectAll();
+    }
+
+    @Override
+    public List<T> list(T entity) {
+        return mapper.select(entity);
     }
 
     @Override
