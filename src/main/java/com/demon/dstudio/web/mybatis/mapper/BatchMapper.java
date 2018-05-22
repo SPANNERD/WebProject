@@ -1,6 +1,6 @@
-package com.dstudio.web.mybatis.mapper;
+package com.demon.dstudio.web.mybatis.mapper;
 
-import com.dstudio.web.mybatis.provider.BatchProvider;
+import com.demon.dstudio.web.mybatis.provider.BatchProvider;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.UpdateProvider;
 

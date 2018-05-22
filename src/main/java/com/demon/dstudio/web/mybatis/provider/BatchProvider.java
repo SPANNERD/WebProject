@@ -1,4 +1,4 @@
-package com.dstudio.web.mybatis.provider;
+package com.demon.dstudio.web.mybatis.provider;
 
 import org.apache.ibatis.mapping.MappedStatement;
 import tk.mybatis.mapper.entity.EntityColumn;

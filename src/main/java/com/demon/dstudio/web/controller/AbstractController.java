@@ -1,14 +1,13 @@
-package com.dstudio.web.controller;
+package com.demon.dstudio.web.controller;
 
-import com.dstudio.web.model.*;
-import com.dstudio.web.service.AbstractService;
+import com.demon.dstudio.web.model.*;
+import com.demon.dstudio.web.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import tgtools.exceptions.APPErrorException;
 import tgtools.util.GUID;
-
 
 import java.lang.reflect.ParameterizedType;
 import java.util.Map;
@@ -28,6 +27,11 @@ public abstract class AbstractController<T extends BaseModel, S extends Abstract
         this.cls = (Class<T>) parameterizedType.getActualTypeArguments()[0];
     }
 
+    @PostMapping("/list_all")
+    public ResponseMsg listAll() {
+        return ResponseMsg.success(service.listAll());
+    }
+
     @PostMapping("/list")
     public ResponseMsg list(@RequestParam Map<String, String> param) throws Exception  {
         String pageIndex = param.get("pageIndex");
@@ -39,7 +43,7 @@ public abstract class AbstractController<T extends BaseModel, S extends Abstract
     }
 
     @PostMapping("/get")
-    public ResponseMsg get(@RequestParam("id") String id) throws APPErrorException {
+    public ResponseMsg get(@RequestParam("id") String id) throws APPErrorException  {
         return ResponseMsg.success(service.get(id));
     }
 
@@ -55,7 +59,7 @@ public abstract class AbstractController<T extends BaseModel, S extends Abstract
     @PostMapping("/save")
     public ResponseMsg save(@RequestBody T entity) throws APPErrorException {
         entity.setId(GUID.newGUID());
-        entity.setRev(System.currentTimeMillis() + "");
+        entity.setRev(System.currentTimeMillis());
         service.save(entity);
         return ResponseMsg.success(entity);
     }

@@ -1,8 +1,9 @@
-package com.dstudio.web.model;
+package com.demon.dstudio.web.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import tgtools.web.develop.model.BaseModel;
 
 import javax.persistence.Transient;
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.io.Serializable;
  */
 @Setter
 @Getter
-public class MiniRowEntity implements Serializable {
+public class MiniRowEntity extends BaseModel implements Serializable {
 
     public final static String STATE_UPDATE = "modified";
     public final static String STATE_INSERT = "added";

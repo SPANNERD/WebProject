@@ -1,8 +1,8 @@
-package com.dstudio.web.service;
+package com.demon.dstudio.web.service;
 
-import com.dstudio.web.model.BaseModel;
-import com.dstudio.web.model.PageEntity;
-import com.dstudio.web.model.PageResult;
+import com.demon.dstudio.web.model.BaseModel;
+import com.demon.dstudio.web.model.PageEntity;
+import com.demon.dstudio.web.model.PageResult;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package com.dstudio.web.service.impl;
+package com.demon.dstudio.web.service.impl;
 
-import com.dstudio.web.model.BaseModel;
-import com.dstudio.web.model.MiniRowEntity;
-import com.dstudio.web.model.PageEntity;
-import com.dstudio.web.model.PageResult;
-import com.dstudio.web.service.AbstractService;
+import com.demon.dstudio.web.model.BaseModel;
+import com.demon.dstudio.web.model.MiniRowEntity;
+import com.demon.dstudio.web.model.PageEntity;
+import com.demon.dstudio.web.model.PageResult;
+import com.demon.dstudio.web.service.AbstractService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,12 +31,9 @@ public abstract class AbstractServiceImpl<T extends BaseModel, M extends Mapper<
 
     @Override
     public List<T> listAll() {
-        return mapper.selectAll();
-    }
-
-    @Override
-    public List<T> list(T entity) {
-        return mapper.select(entity);
+        Example example = new Example(cls);
+        example.orderBy("rev");
+        return mapper.selectByExample(example);
     }
 
     @Override
@@ -49,6 +46,12 @@ public abstract class AbstractServiceImpl<T extends BaseModel, M extends Mapper<
         return new PageResult<>(mapper.selectCount(entity), list);
     }
 
+
+    @Override
+    public List<T> list(T entity) {
+        return mapper.select(entity);
+    }
+
     @Override
     public int count(T entity) {
         return mapper.selectCount(entity);
@@ -58,6 +61,8 @@ public abstract class AbstractServiceImpl<T extends BaseModel, M extends Mapper<
     public T get(String id) {
         return mapper.selectByPrimaryKey(id);
     }
+
+
 
     @Override
     public T getByFilter(T record) {

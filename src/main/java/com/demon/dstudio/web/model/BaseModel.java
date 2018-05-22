@@ -1,4 +1,4 @@
-package com.dstudio.web.model;
+package com.demon.dstudio.web.model;
 
 import lombok.Data;
 import tgtools.util.GUID;
@@ -13,17 +13,8 @@ import javax.persistence.OrderBy;
 @Data
 public class BaseModel extends MiniRowEntity {
 
-    @Id
-    @Column(name = "ID_")
-    private String id;
-
-    @OrderBy
-    @Column(name = "REV_")
-    private String rev;
-
-
     public static void init(BaseModel model) {
         model.setId(GUID.newGUID());
-        model.setRev(System.currentTimeMillis() + "");
+        model.setRev(System.currentTimeMillis());
     }
 }

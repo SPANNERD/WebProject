@@ -1,4 +1,4 @@
-package com.dstudio.web.model;
+package com.demon.dstudio.web.model;
 
 import lombok.Getter;
 import lombok.Setter;
