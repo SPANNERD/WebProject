@@ -1,6 +1,5 @@
 package com.demon.dstudio.web.service.impl;
 
-import com.demon.dstudio.web.model.BaseModel;
 import com.demon.dstudio.web.model.MiniRowEntity;
 import com.demon.dstudio.web.model.PageEntity;
 import com.demon.dstudio.web.model.PageResult;
@@ -8,6 +7,7 @@ import com.demon.dstudio.web.service.AbstractService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import tgtools.web.develop.model.BaseModel;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
 
@@ -87,21 +87,21 @@ public abstract class AbstractServiceImpl<T extends BaseModel, M extends Mapper<
         return 1 == mapper.updateByPrimaryKeySelective(entity);
     }
 
-    @Transactional(rollbackFor = Exception.class)
-    @Override
-    public void batchSave(List<T> list) {
-        for (T record : list) {
-            String rowState = record.getRowState();
-            if (MiniRowEntity.STATE_UPDATE.equals(rowState)) {
-                update(record);
-            }
-            if (MiniRowEntity.STATE_INSERT.equals(rowState)) {
-                BaseModel.init(record);
-                save(record);
-            }
-            if (MiniRowEntity.STATE_DELETE.equals(rowState)) {
-                remove(record.getId());
-            }
-        }
-    }
+//    @Transactional(rollbackFor = Exception.class)
+//    @Override
+//    public void batchSave(List<T> list) {
+//        for (T record : list) {
+//            String rowState = record.getRowState();
+//            if (MiniRowEntity.STATE_UPDATE.equals(rowState)) {
+//                update(record);
+//            }
+//            if (MiniRowEntity.STATE_INSERT.equals(rowState)) {
+//                BaseModel.init(record);
+//                save(record);
+//            }
+//            if (MiniRowEntity.STATE_DELETE.equals(rowState)) {
+//                remove(record.getId());
+//            }
+//        }
+//    }
 }

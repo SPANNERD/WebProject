@@ -1,8 +1,8 @@
 package com.demon.dstudio.web.service;
 
-import com.demon.dstudio.web.model.BaseModel;
 import com.demon.dstudio.web.model.PageEntity;
 import com.demon.dstudio.web.model.PageResult;
+import tgtools.web.develop.model.BaseModel;
 
 import java.util.List;
 

@@ -8,7 +8,7 @@ import javax.persistence.Transient;
  * @author wd824
  */
 @Data
-public class TreeNode extends BaseModel {
+public class TreeNode {
 
     @Transient
     private boolean checked;

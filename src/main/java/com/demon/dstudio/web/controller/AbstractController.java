@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import tgtools.exceptions.APPErrorException;
 import tgtools.util.GUID;
+import tgtools.web.develop.model.BaseModel;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.Map;
