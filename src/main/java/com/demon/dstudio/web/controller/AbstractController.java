@@ -71,10 +71,5 @@ public abstract class AbstractController<T extends BaseModel, S extends Abstract
         return ResponseMsg.success("删除成功！");
     }
 
-    @PostMapping("/batch_save")
-    public ResponseMsg batchSave(@RequestBody MiniGridEntity<T> gridEntity) {
-        service.batchSave(gridEntity.getData());
-        return ResponseMsg.success("");
-    }
 
 }

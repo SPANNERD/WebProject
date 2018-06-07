@@ -29,6 +29,5 @@ public interface AbstractService<T extends BaseModel> {
 
     boolean update(T entity);
 
-    void batchSave(List<T> list);
 
 }

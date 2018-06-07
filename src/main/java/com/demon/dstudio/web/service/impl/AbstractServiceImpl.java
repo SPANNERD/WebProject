@@ -32,7 +32,6 @@ public abstract class AbstractServiceImpl<T extends BaseModel, M extends Mapper<
     @Override
     public List<T> listAll() {
         Example example = new Example(cls);
-        example.orderBy("rev");
         return mapper.selectByExample(example);
     }
 
@@ -41,7 +40,6 @@ public abstract class AbstractServiceImpl<T extends BaseModel, M extends Mapper<
         int pageIndex = Integer.parseInt(pageEntity.getPageIndex());
         int pageSize = Integer.parseInt(pageEntity.getPageSize());
         Example example = new Example(cls);
-        example.orderBy("rev");
         List<T> list = mapper.selectByExampleAndRowBounds(example, new RowBounds((pageIndex - 1) * pageSize, pageSize));
         return new PageResult<>(mapper.selectCount(entity), list);
     }
@@ -87,21 +85,5 @@ public abstract class AbstractServiceImpl<T extends BaseModel, M extends Mapper<
         return 1 == mapper.updateByPrimaryKeySelective(entity);
     }
 
-//    @Transactional(rollbackFor = Exception.class)
-//    @Override
-//    public void batchSave(List<T> list) {
-//        for (T record : list) {
-//            String rowState = record.getRowState();
-//            if (MiniRowEntity.STATE_UPDATE.equals(rowState)) {
-//                update(record);
-//            }
-//            if (MiniRowEntity.STATE_INSERT.equals(rowState)) {
-//                BaseModel.init(record);
-//                save(record);
-//            }
-//            if (MiniRowEntity.STATE_DELETE.equals(rowState)) {
-//                remove(record.getId());
-//            }
-//        }
-//    }
+
 }
