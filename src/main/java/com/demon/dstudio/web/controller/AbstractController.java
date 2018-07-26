@@ -43,6 +43,11 @@ public abstract class AbstractController<T extends BaseModel, S extends Abstract
         return ResponseMsg.success(pageResult.getData(), pageResult.getTotal());
     }
 
+    @PostMapping("/list_by_filter")
+    public ResponseMsg listByFilter(@RequestBody T entity) {
+        return ResponseMsg.success(service.list(entity));
+    }
+
     @PostMapping("/get")
     public ResponseMsg get(@RequestParam("id") String id) throws APPErrorException  {
         return ResponseMsg.success(service.get(id));

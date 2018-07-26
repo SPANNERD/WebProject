@@ -5,7 +5,7 @@
 
     <groupId>com.github.demon214</groupId>
     <artifactId>dstudio.web</artifactId>
-    <version>1.0.13-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>dstudio.web</name>
@@ -132,13 +132,22 @@
             <version>1.16.20</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.9</version>
+        </dependency>
+
 
         <!-- tgtools web开发组件 -->
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>tgtools.web.develop</artifactId>
-            <version>1.1.9</version>
+            <version>1.1.13</version>
         </dependency>
+
+
 
 
     </dependencies>
@@ -179,6 +188,27 @@
                 </configuration>
             </plugin>
 
+            <!--配置生成Javadoc包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <aggregate>true</aggregate>
+                    <charset>UTF-8</charset>
+                    <docencoding>UTF-8</docencoding>
+                    <failOnError>false</failOnError>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <!--配置生成源码包-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
