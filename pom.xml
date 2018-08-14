@@ -5,7 +5,7 @@
 
     <groupId>com.github.demon214</groupId>
     <artifactId>dstudio.web</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.3.3</version>
     <packaging>jar</packaging>
 
     <name>dstudio.web</name>
